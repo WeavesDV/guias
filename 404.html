@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/guias/divine-light/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía visual · Divine Light</title>
+    <script>
+      // GitHub Pages no reescribe rutas de una SPA: este 404 hace de fallback.
+      // Reescribe /guias/<resto> a /guias/divine-light/<resto> para que el router lo resuelva.
+      (function () {
+        var base = "/guias/divine-light/";
+        var p = location.pathname.replace(/^\/guias\//, "").replace(/^\/+/, "");
+        if (p.indexOf("divine-light/") !== 0 && p !== "divine-light") {
+          history.replaceState(null, "", base + p + location.search + location.hash);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/guias/divine-light/assets/index-DUkFxpD0.js"></script>
+    <link rel="stylesheet" crossorigin href="/guias/divine-light/assets/index-B8fJe9zp.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

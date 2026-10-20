@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guías · Weaves</title>
+<meta name="description" content="Guías visuales de Weaves: la referencia de color, tipografía y componentes de cada proyecto.">
+<style>
+  :root{
+    --teal:#00B4A6; --indigo:#1E2A4A; --ink:#131A2B; --muted:#5C6579;
+    --bg:#F7F8FA; --card:#FFFFFF; --line:#E3E7ED;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.55}
+  .wrap{max-width:920px;margin:0 auto;padding:clamp(32px,6vw,80px) 24px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:clamp(40px,7vw,72px)}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em;color:var(--indigo)}
+  .brand .dot{width:10px;height:10px;border-radius:3px;background:var(--teal);display:inline-block}
+  header .meta{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  h1{font-size:clamp(2rem,5vw,2.75rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 16px;color:var(--indigo);font-weight:700}
+  .lead{max-width:56ch;color:var(--muted);font-size:1.0625rem;margin:0 0 clamp(32px,5vw,48px)}
+  .grid{display:grid;gap:16px}
+  a.card{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;
+    text-decoration:none;color:inherit;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  a.card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(30,42,74,.10);border-color:#CBD3DE}
+  .card h2{margin:0;font-size:1.1875rem;color:var(--indigo);letter-spacing:-.01em}
+  .card p{margin:6px 0 0;color:var(--muted);font-size:.9375rem}
+  .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .tag{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:4px 10px;border-radius:999px;background:rgba(0,180,166,.12);color:#00786F}
+  .tag.neutral{background:#EEF1F5;color:var(--muted)}
+  .go{width:38px;height:38px;border-radius:50%;background:var(--indigo);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:1rem}
+  footer{margin-top:clamp(40px,7vw,72px);padding-top:20px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="dot"></span> Weaves</div>
+      <div class="meta">Guías visuales</div>
+    </header>
+
+    <h1>La referencia visual de cada proyecto, en un solo enlace.</h1>
+    <p class="lead">Cada guía reúne la paleta con sus valores reales, las tipografías, las formas y los componentes tal como se ven. Es lo que se usa para revisar y aprobar antes de construir.</p>
+
+    <div class="grid">
+      <a class="card" href="/guias/divine-light/componentes">
+        <div>
+          <h2>Divine Light · Guía visual</h2>
+          <p>Zuzel Amelia Gorostiaga — paleta warm-sand, Fraunces + DM Sans, 27 componentes de marca.</p>
+          <div class="row">
+            <span class="tag">En revisión del cliente</span>
+            <span class="tag neutral">v0.6</span>
+            <span class="tag neutral">Septiembre 2026</span>
+          </div>
+        </div>
+        <div class="go">→</div>
+      </a>
+    </div>
+
+    <footer>
+      <span>Weaves · Automatización operacional</span>
+      <span>Documento confidencial</span>
+    </footer>
+  </div>
+</body>
+</html>

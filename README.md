@@ -17,9 +17,20 @@ index.html            hub de guías
 divine-light/         Divine Light — Zuzel Amelia
   index.html          shell generada por Vite (base /guias/divine-light/)
   assets/             JS + CSS compilados
+  paleta/index.html   guía de paleta v2 (calipso) — HTML standalone + DESIGN.md y tokens
 ```
 
 ## Guía Divine Light
+
+### Paleta v2 (calipso) — 29-oct-2026
+
+- Fuente de los valores: `lorieladd.com/40-days` (tokens leídos de su CSS). Independiente de la propuesta de
+  diseño pendiente.
+- Página: `/guias/divine-light/paleta/` — HTML standalone, sin build. Incluye `DESIGN.md` (normativo),
+  `tokens.json` (DTCG) y `tailwind.theme.json`.
+- Acento calipso `#70A3B2`; papel de página `#F6F1EB`; fuera la familia rosa.
+
+### Biblioteca de componentes (warm-sand)
 
 - Fuente: `weaves-course-platform` (repo de cliente en labsryzen), commit `cb68b62` — v0.6.
 - Build: `npx vite build --base=/guias/divine-light/` + `BrowserRouter` con `basename`

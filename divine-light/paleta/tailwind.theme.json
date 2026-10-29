@@ -1,0 +1,64 @@
+{
+  "colors": {
+    "primary": "#36374B",
+    "secondary": "#6A5C49",
+    "accent": "#70A3B2",
+    "accent-soft": "#B9D2D8",
+    "accent-ink": "#43616A",
+    "accent-deep": "#4E727C",
+    "taupe": "#AB9D8B",
+    "page": "#F6F1EB",
+    "neutral": "#FFFCF6",
+    "sand": "#E6DED5",
+    "sand-soft": "#F2EDE5",
+    "line": "#CEC4B7",
+    "charcoal": "#353535",
+    "body-text": "#353535",
+    "white": "#FFFFFF"
+  },
+  "borderRadius": {
+    "xs": "2px",
+    "sm": "8px",
+    "md": "12px",
+    "lg": "18px",
+    "xl": "24px",
+    "pill": "999px"
+  },
+  "spacing": {
+    "xs": "8px",
+    "sm": "12px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "48px",
+    "2xl": "80px",
+    "section": "120px"
+  },
+  "fontFamily": {
+    "display-serif": [
+      "Piazzolla"
+    ],
+    "heading-serif": [
+      "Piazzolla"
+    ],
+    "subtitle-serif-italic": [
+      "Piazzolla"
+    ],
+    "lead": [
+      "DM Sans"
+    ],
+    "body": [
+      "DM Sans"
+    ],
+    "label": [
+      "DM Sans"
+    ]
+  },
+  "fontSize": {
+    "display-serif": "clamp(44px, 6.4vw, 92px)",
+    "heading-serif": "clamp(30px, 4vw, 54px)",
+    "subtitle-serif-italic": "clamp(20px, 2.4vw, 28px)",
+    "lead": "18px",
+    "body": "16px",
+    "label": "11px"
+  }
+}

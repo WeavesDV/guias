@@ -11,6 +11,7 @@
   :root{
     --primary:#36374B; --secondary:#6A5C49; --accent:#70A3B2; --accent-soft:#B9D2D8;
     --accent-ink:#43616A; --accent-deep:#4E727C; --taupe:#AB9D8B; --page:#F6F1EB;
+    --rose:#DAA79F; --rose-soft:#E6C5C0; --rose-ink:#775B57;
     --neutral:#FFFCF6; --sand:#E6DED5; --sand-soft:#F2EDE5; --line:#CEC4B7;
     --charcoal:#353535; --white:#FFFFFF;
     --serif:"Piazzolla",Georgia,serif; --sans:"DM Sans",-apple-system,Segoe UI,Roboto,sans-serif;
@@ -96,6 +97,11 @@
   .btn.primary:hover{background:var(--charcoal)}
   .btn.accent{background:var(--accent-soft);color:var(--primary)}
   .btn.accent:hover{background:#A9C7CE}
+  .btn.rose{background:var(--rose);color:var(--primary)}
+  .btn.rose:hover{background:#D2968C}
+  .card.rose{background:var(--rose-soft);border-color:#DDB6B0}
+  .card.rose .tag{color:var(--rose-ink)}
+  .card.rose .init{color:var(--rose);opacity:.75}
   .btn.ghost{background:var(--neutral);color:var(--primary);border-color:var(--line)}
 
   /* sí / no */
@@ -124,12 +130,14 @@
 <header class="hero">
   <div class="wrap">
     <div class="mark">D L</div>
-    <h1>Luz cálida<br>sobre papel, <em class="voice">y un calipso que decide</em></h1>
+    <h1>Luz cálida<br>sobre papel, <em class="voice">un calipso y un rosa que deciden</em></h1>
     <p class="lead">Guía visual de Divine Light Journey. Papel cálido, tinta azul marino y un calipso apagado que
-      solo aparece donde hay que mirar. Sin rosa, sin dorado, sin tierra oscura.</p>
+      solo aparece donde hay que mirar, con un rosa empolvado como segunda nota. Sin dorado, sin tierra
+      oscura.</p>
     <div class="metaline">
       <div><b>#70A3B2</b>el calipso de la guía</div>
       <div><b>#F6F1EB</b>papel de página</div>
+      <div><b>#DAA79F</b>rosa empolvado</div>
       <div><b>#36374B</b>tinta azul marino</div>
       <div><b>29-oct-2026</b>fuente: lorieladd.com/40-days</div>
     </div>
@@ -162,13 +170,15 @@
       viene del color, viene del grosor del texto y del espacio.</p>
     <p><strong>El calipso es el único gesto de color, y es relleno:</strong> filetes, degradados de cabecera y
       botones secundarios. Cuando hace falta calipso en texto, se usa su tinta <code>#43616A</code>.</p>
+    <p><strong>El rosa empolvado <code>#DAA79F</code> es la segunda nota:</strong> la calidez de la marca cuando el
+      calipso no basta. Admite texto marino encima (5.55:1), nunca crema ni blanco (2.05:1).</p>
   </div>
 </section>
 
 <section id="paleta">
   <div class="wrap">
     <div class="eyebrow">Paleta</div>
-    <h2>Un papel cálido, una tinta, un calipso</h2>
+    <h2>Un papel cálido, una tinta, un calipso y un rosa</h2>
     <div class="swatches">
       <div class="sw"><div class="chip" style="background:#F6F1EB"></div><div class="info">
         <div class="nm">Papel de página</div><div class="hx">#F6F1EB</div>
@@ -202,6 +212,18 @@
         <div class="nm">Calipso tinta</div><div class="hx">#43616A</div>
         <div class="role">Calipso cuando es texto: enlaces, antetítulos, precios.</div>
         <span class="ratio ok">6.50:1 AA</span></div></div>
+      <div class="sw"><div class="chip" style="background:#DAA79F"></div><div class="info">
+        <div class="nm">Rosa empolvado</div><div class="hx">#DAA79F</div>
+        <div class="role">Segunda nota: tarjeta de programa y CTA cálido. Relleno con texto marino.</div>
+        <span class="ratio fill">2.05:1 · solo relleno</span></div></div>
+      <div class="sw"><div class="chip" style="background:#E6C5C0"></div><div class="info">
+        <div class="nm">Rosa claro</div><div class="hx">#E6C5C0</div>
+        <div class="role">Rosa en bloques grandes que llevan texto encima.</div>
+        <span class="ratio ok">7.26:1 AA</span></div></div>
+      <div class="sw"><div class="chip" style="background:#775B57"></div><div class="info">
+        <div class="nm">Rosa tinta</div><div class="hx">#775B57</div>
+        <div class="role">Rosa cuando es texto sobre fondo claro.</div>
+        <span class="ratio ok">6.00:1 AA</span></div></div>
       <div class="sw"><div class="chip" style="background:#AB9D8B"></div><div class="info">
         <div class="nm">Taupe</div><div class="hx">#AB9D8B</div>
         <div class="role">Estados e interruptores. Solo relleno.</div>
@@ -313,6 +335,16 @@
         <div class="note">Acceso inmediato</div>
         <div style="margin-top:18px"><span class="btn accent" style="width:100%;text-align:center">Empezar ahora</span></div>
       </div>
+      <div class="card rose">
+        <div class="tag">● Programa de 40 días</div>
+        <div class="init">S</div>
+        <div class="note">40 días</div>
+        <h3>SOR</h3>
+        <p style="font-size:15px;margin-bottom:0">La comunidad que sostiene el proceso entre programa y programa.</p>
+        <div class="price"><small>€</small>29</div>
+        <div class="note">Al mes · cancela cuando quieras</div>
+        <div style="margin-top:18px"><span class="btn rose" style="width:100%;text-align:center">Entrar en SOR</span></div>
+      </div>
       <div class="card">
         <div class="tag">● Próximamente</div>
         <div class="init">D</div>
@@ -327,10 +359,12 @@
     <div class="btns" style="margin-top:34px">
       <span class="btn primary">Button primario</span>
       <span class="btn accent">Button acento</span>
+      <span class="btn rose">Button rosa</span>
       <span class="btn ghost">Button fantasma</span>
     </div>
     <p style="margin-top:18px;font-size:14px;color:var(--secondary)">El botón de acento lleva <strong>texto
-      marino</strong> sobre calipso claro (7.35:1). Nunca texto blanco sobre calipso: 2.77:1.</p>
+      marino</strong> sobre calipso claro (7.35:1) y el rosa lleva <strong>texto marino</strong> (5.55:1). Nunca
+      texto blanco sobre ninguno de los dos: 2.77:1 y 2.05:1.</p>
   </div>
 </section>
 
@@ -344,6 +378,7 @@
         <ul class="plain yes">
           <li>Papel de página cálido, secciones en crema y capas de arena; blanco puro solo en tarjeta.</li>
           <li>Calipso como relleno y <code>#43616A</code> cuando el calipso es texto.</li>
+          <li>Rosa <code>#DAA79F</code> como relleno cálido con texto marino, o <code>#775B57</code> si el rosa es texto.</li>
           <li>Titulares serif peso 400, segunda voz en cursiva.</li>
           <li>120px entre secciones y 62-68ch de medida.</li>
           <li>Filete de 1px antes que sombra.</li>
@@ -352,9 +387,9 @@
       <div>
         <h3 style="margin-bottom:12px">No</h3>
         <ul class="plain no">
-          <li>Texto blanco sobre el calipso, o calipso como texto pequeño.</li>
+          <li>Texto blanco sobre calipso o rosa, o calipso como texto pequeño.</li>
           <li>Negro puro: la tinta es <code>#36374B</code>.</li>
-          <li>Rosa, dorado o el violeta de la barra de cookies.</li>
+          <li>Rosas fuera de <code>#DAA79F</code>, dorado o el violeta de la barra de cookies.</li>
           <li>Degradados de dos acentos o fríos.</li>
           <li>Negritas en titulares serif ni sombras negras.</li>
         </ul>
@@ -376,12 +411,16 @@
         <tr><td>Marino sobre arena suave</td><td>9.98:1</td><td>Sí</td><td>Etiquetas y chips</td></tr>
         <tr><td>Marino sobre arena</td><td>8.74:1</td><td>Sí</td><td>Tarjeta informativa</td></tr>
         <tr><td>Marino sobre calipso claro</td><td>7.35:1</td><td>Sí</td><td>Botón y tarjeta destacada</td></tr>
+        <tr><td>Marino sobre rosa claro</td><td>7.26:1</td><td>Sí</td><td>Tarjeta rosa grande</td></tr>
         <tr><td>Marrón sobre crema</td><td>6.33:1</td><td>Sí</td><td>Texto secundario</td></tr>
         <tr><td>Calipso tinta sobre crema</td><td>6.50:1</td><td>Sí</td><td>Enlaces y antetítulos</td></tr>
+        <tr><td>Rosa tinta sobre crema</td><td>6.00:1</td><td>Sí</td><td>Rosa cuando es texto</td></tr>
+        <tr><td>Marino sobre rosa</td><td>5.55:1</td><td>Sí</td><td>Botón y tarjeta rosa</td></tr>
         <tr><td>Crema sobre calipso profundo</td><td>5.10:1</td><td>Sí</td><td>Bandas oscuras y hover</td></tr>
         <tr><td>Calipso sobre marino</td><td>4.19:1</td><td>Solo ≥24px</td><td>Texto grande sobre sección oscura</td></tr>
         <tr><td>Blanco sobre calipso</td><td>2.77:1</td><td><strong>No</strong></td><td>Prohibido</td></tr>
         <tr><td>Calipso sobre crema</td><td>2.71:1</td><td><strong>No</strong></td><td>Solo relleno</td></tr>
+        <tr><td>Blanco o crema sobre rosa</td><td>2.05:1</td><td><strong>No</strong></td><td>Prohibido</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -404,9 +443,9 @@
 
 <footer>
   <div class="wrap">
-    Divine Light Journey · guía visual v2 · 29-oct-2026 · tokens normativos en <code>DESIGN.md</code> ·
-    fuente de la paleta: <code>lorieladd.com/40-days</code>, tokens leídos de su CSS. Independiente de la propuesta
-    de diseño.
+    Divine Light Journey · guía visual v2.1 · 29-oct-2026 · tokens normativos en <code>DESIGN.md</code> ·
+    fuente de la paleta: <code>lorieladd.com/40-days</code>, tokens leídos de su CSS, más el rosa
+    <code>#DAA79F</code> aportado por Héctor. Independiente de la propuesta de diseño.
   </div>
 </footer>
 

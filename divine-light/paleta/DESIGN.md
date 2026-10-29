@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Divine Light
-description: Papel cálido y tinta azul marino, con un calipso apagado como único acento. Sin rosa de marca, sin dorado, sin tierra oscura.
+description: Papel cálido y tinta azul marino, con un calipso apagado como acento principal y un rosa empolvado como segunda nota. Sin dorado y sin tierra oscura.
 colors:
   primary: "#36374B"
   secondary: "#6A5C49"
@@ -9,6 +9,9 @@ colors:
   accent-soft: "#B9D2D8"
   accent-ink: "#43616A"
   accent-deep: "#4E727C"
+  rose: "#DAA79F"
+  rose-soft: "#E6C5C0"
+  rose-ink: "#775B57"
   taupe: "#AB9D8B"
   page: "#F6F1EB"
   neutral: "#FFFCF6"
@@ -170,6 +173,22 @@ components:
     typography: "{typography.label}"
     rounded: "{rounded.pill}"
     padding: 6px 14px
+  button-rose:
+    backgroundColor: "{colors.rose}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.pill}"
+    padding: 16px 34px
+  card-rose:
+    backgroundColor: "{colors.rose-soft}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.lg}"
+    padding: 32px
+  link-rose:
+    backgroundColor: "{colors.neutral}"
+    textColor: "{colors.rose-ink}"
+    typography: "{typography.body}"
 ---
 
 ## Overview
@@ -183,9 +202,13 @@ suben a crema (`#FFFCF6`) y las tarjetas al blanco; el texto se apoya en una tin
 (`#36374B`), no en negro. Esa distancia corta entre los claros es lo que hace que la página respire sin verse
 vacía: el contraste no viene del color, viene del grosor del texto y del espacio.
 
-El calipso es el único gesto de color y tiene una regla dura: **`#70A3B2` es relleno, no texto pequeño**. Sobre
+El calipso es el gesto de color principal y tiene una regla dura: **`#70A3B2` es relleno, no texto pequeño**. Sobre
 crema da 2.71:1. Para texto sobre fondo claro se usa su tinta `#43616A` (6.50:1); para fondo de tarjeta o botón
 secundario se usa el calipso claro `#B9D2D8`, que deja el texto marino en 7.35:1.
+
+El **rosa empolvado `#DAA79F`** es la segunda nota, aportada por Héctor el 29-oct: la calidez de la marca cuando
+el calipso no basta (tarjetas de programa, cabeceras, detalles). También es relleno, pero admite texto marino
+encima (5.55:1); con texto crema o blanco no cumple (2.05:1).
 
 Los valores de este documento están medidos sobre `https://lorieladd.com/40-days` (la guía de color que fijó
 Héctor el 29-oct-2026): tokens leídos de su CSS, fondos de sección y acentos localizados uno a uno. Son
@@ -205,6 +228,12 @@ aprobación: si la propuesta cambia, estos colores no.
   papel de página y 5.00:1 sobre arena. Es el color de enlaces, antetítulos y precios cuando no van en tinta.
 - **Accent deep `#4E727C`:** el extremo del degradado del calipso y el fondo oscuro que lleva texto crema
   (5.10:1). Es el hover de la tarjeta destacada.
+- **Rose `#DAA79F` (rosa empolvado):** la segunda nota de color. Fondo de tarjeta de programa, cabecera con
+  degradado, botón secundario cálido y detalles. Admite texto marino encima (5.55:1) pero **nunca texto crema o
+  blanco** (2.05:1). Sobre fondo claro no se usa como texto.
+- **Rose soft `#E6C5C0`:** el rosa aclarado para bloques grandes que llevan texto marino (7.26:1).
+- **Rose ink `#775B57`:** el rosa cuando es texto sobre fondo claro. 6.00:1 sobre crema, 5.47:1 sobre el papel de
+  página y 4.61:1 sobre arena.
 - **Taupe `#AB9D8B`:** estados, interruptores y detalles apagados, medido en la guía. **Solo relleno**: 2.59:1
   sobre crema; con texto lleva carbón `#353535` (4.63:1), no marino.
 - **Page `#F6F1EB`:** fondo de página — es el `background-color` del body en la guía. El crema puro **no** es el
@@ -218,8 +247,8 @@ aprobación: si la propuesta cambia, estos colores no.
   el papel de página.
 - **Charcoal `#353535`:** color del texto corrido en la guía y hover del botón primario. Es el único gris neutro
   del sistema; no introduce familia nueva.
-- **Fuera del sistema:** el rosa (`#DBAAA4` y familia), el dorado y el violeta de la barra de cookies de la
-  guía (`#5A5090`, que es de un componente de terceros y no de la marca).
+- **Fuera del sistema:** el dorado, el violeta de la barra de cookies de la guía (`#5A5090`, componente de
+  terceros) y cualquier otro rosa que no sea `#DAA79F` y su familia.
 
 **Accesibilidad — lo que manda.** Todo par texto/fondo está medido:
 
@@ -232,16 +261,20 @@ aprobación: si la propuesta cambia, estos colores no.
 | `#36374B` sobre `#F2EDE5` | 9.98:1 | cuerpo sobre arena suave |
 | `#36374B` sobre `#E6DED5` | 8.74:1 | cuerpo sobre arena |
 | `#36374B` sobre `#B9D2D8` | 7.35:1 | texto del botón y la tarjeta destacada |
+| `#36374B` sobre `#E6C5C0` | 7.26:1 | texto sobre tarjeta rosa grande |
 | `#6A5C49` sobre `#FFFCF6` | 6.33:1 | texto secundario |
 | `#43616A` sobre `#FFFCF6` | 6.50:1 | enlaces y antetítulos |
+| `#775B57` sobre `#FFFCF6` | 6.00:1 | rosa cuando es texto |
+| `#36374B` sobre `#DAA79F` | 5.55:1 | texto marino sobre rosa |
 | `#FFFCF6` sobre `#4E727C` | 5.10:1 | texto sobre el calipso profundo |
 | `#70A3B2` sobre `#36374B` | 4.19:1 | calipso como texto grande (≥24px) sobre marino |
 | `#70A3B2` sobre `#FFFCF6` | 2.71:1 | **solo relleno** — nunca texto |
+| `#FFFCF6` sobre `#DAA79F` | 2.05:1 | **prohibido**: ni crema ni blanco sobre rosa |
 | `#AB9D8B` sobre `#FFFCF6` | 2.59:1 | **solo relleno** |
 
-Reglas duras: **nunca texto blanco sobre calipso** (2.77:1) ni calipso `#70A3B2` como texto sobre crema
-(2.71:1). Cuando el fondo es calipso y lleva texto, el fondo es `#B9D2D8` (texto marino) o `#4E727C`
-(texto crema).
+Reglas duras: **nunca texto blanco o crema sobre calipso ni sobre rosa** (2.77:1 y 2.05:1), ni calipso `#70A3B2`
+como texto sobre crema (2.71:1). Cuando el fondo es calipso y lleva texto, el fondo es `#B9D2D8` (texto marino) o
+`#4E727C` (texto crema); cuando es rosa, o va `#DAA79F` con texto marino, o `#E6C5C0` con marino.
 
 ## Typography
 
@@ -299,6 +332,10 @@ capa: papel de página → crema → arena. La sombra solo aparece cuando algo f
 - **`card`** — blanca, radio 18px, relleno 32px, borde `#CEC4B7`. La tarjeta por defecto.
 - **`card-accent` / `card-accent-hover`** — la tarjeta destacada (programa en vivo): calipso claro con texto
   marino, y calipso profundo con texto crema al pasar el ratón.
+- **`card-rose`** — la variante cálida de la misma tarjeta: `#E6C5C0` con texto marino. Convive con la calipso;
+  no compiten en la misma rejilla.
+- **`button-rose`** — rosa `#DAA79F` con texto marino (5.55:1). El CTA cálido; nunca con texto blanco.
+- **`link-rose`** — rosa como texto sobre claro, en `#775B57`.
 - **`card-sand` / `card-sand-soft`** — las variantes informativas, en arena y arena suave.
 - **`eyebrow`** — etiqueta de sección en mayúsculas sobre arena suave, en calipso tinta `#43616A` porque es
   texto sobre claro. Encabeza cada sección.
@@ -315,6 +352,7 @@ capa: papel de página → crema → arena. La sombra solo aparece cuando algo f
 
 - Fija el fondo de página en `#F6F1EB`, sube las secciones a crema `#FFFCF6` y las tarjetas a blanco.
 - Usa el calipso como relleno y baja a `#43616A` cuando necesites calipso en texto.
+- Usa el rosa `#DAA79F` como relleno cálido con texto marino, o `#775B57` cuando el rosa es texto.
 - Escribe los titulares en serif peso 400, con la segunda voz en cursiva.
 - Deja 120px entre secciones y 62-68ch de medida de lectura.
 - Separa con filete de 1px antes que con sombra.
@@ -322,8 +360,9 @@ capa: papel de página → crema → arena. La sombra solo aparece cuando algo f
 
 **Don't**
 
-- No pongas texto blanco sobre el calipso (2.77:1) ni calipso `#70A3B2` como texto sobre crema (2.71:1).
-- No reintroduzcas el rosa, el dorado ni el violeta de la barra de cookies.
+- No pongas texto blanco sobre calipso (2.77:1), ni crema o blanco sobre rosa `#DAA79F` (2.05:1), ni calipso
+  `#70A3B2` como texto sobre crema (2.71:1).
+- No introduzcas rosas fuera de `#DAA79F`, ni el dorado ni el violeta de la barra de cookies.
 - No introduzcas negro puro: la tinta es `#36374B` y el gris es `#353535`.
 - No mezcles degradados de dos acentos ni degradados fríos.
 - No uses negritas en los titulares serif: el peso 400 es la firma.
@@ -335,7 +374,7 @@ capa: papel de página → crema → arena. La sombra solo aparece cuando algo f
 1. **Tipografía serif definitiva** — Piazzolla (propuesta) frente a Fraunces. Decide Héctor; afecta al
    `@font-face` y a la licencia.
 2. **Logotipo** — el sistema usa inicial en serif como marca provisional (issue `MLAB-473`).
-3. **Calipso exacto de marca** — fijado en `#70A3B2` leído del CSS de la guía; si Zuzel tiene el hex de su
-   manual, sustituye este valor y se recalculan los contrastes.
+3. **Calipso y rosa exactos** — calipso `#70A3B2` leído del CSS de la guía; rosa `#DAA79F` aportado por Héctor el
+   29-oct. Si Zuzel tiene los hex de su manual, se sustituyen y se recalculan los contrastes.
 4. **Aplicar a los consumidores** — la web (Weave Engine) y la plataforma (tema `warm-sand`) siguen con los
    valores anteriores; hay que reemplazarlos por estos tokens.

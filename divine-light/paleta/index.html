@@ -18,10 +18,27 @@
     --serif:"Piazzolla",Georgia,serif; --sans:"DM Sans",-apple-system,Segoe UI,Roboto,sans-serif;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--page);color:var(--primary);font-family:var(--sans);
+  body{margin:0;background:var(--s0);color:var(--primary);font-family:var(--sans);
        font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
-  section{padding:96px 0;border-top:1px solid var(--line)}
+  section{padding:96px 0;border-top:1px solid var(--line);background:var(--s0)}
+  /* Cada sección lleva su capa explícita: la guía alterna blanco, crema y papel. */
+  #indice{background:var(--s3)}
+  #paleta{background:var(--s1)}
+  #fondos{background:var(--s3)}
+  #forma{background:var(--s1)}
+  #componentes{background:var(--s0)}
+  #reglas{background:var(--s3)}
+  #pendientes{background:var(--s1)}
+  /* Fondos por sección — rampa v2.2: blanco, crema, papel y arena alternados.
+     Donde el salto de luz es menor de 1.15:1, el filete de 1px hace la división. */
+  .hero{background:var(--s0)}
+  #esencia,#tipografia,#reglas{background:var(--s0)}
+  #indice,#fondos,#componentes{background:var(--s1)}
+  #paleta,#forma{background:var(--s3)}
+  #accesibilidad{background:var(--s4)}
+  #pendientes{background:var(--s2)}
+  footer{background:var(--s6)}
   h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.02em;line-height:1.05}
   h1{font-size:clamp(44px,6.4vw,92px)}
   h2{font-size:clamp(30px,4vw,54px);letter-spacing:-.015em;margin-bottom:28px}
@@ -37,7 +54,7 @@
   .hero{padding:0;border:0;background:
      radial-gradient(120% 80% at 78% 0%, var(--sand-soft) 0%, rgba(242,237,229,0) 60%),
      radial-gradient(90% 60% at 8% 22%, rgba(112,163,178,.26) 0%, rgba(112,163,178,0) 62%),
-     var(--page);}
+     var(--s0);}
   .hero .wrap{padding-top:96px;padding-bottom:120px}
   .mark{font-family:var(--serif);font-size:64px;line-height:1;color:var(--accent);letter-spacing:-.02em}
   .hero h1{margin:22px 0 26px;max-width:16ch}
@@ -126,7 +143,7 @@
   ul.plain.no li::before{content:"✕";position:absolute;left:0;color:var(--accent-ink);font-weight:500}
   .pending li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
   .pending b{font-family:var(--serif);font-weight:400;font-size:17px;display:block}
-  footer{padding:64px 0 96px;border-top:1px solid var(--line);font-size:13px;color:var(--secondary)}
+  footer{padding:64px 0 96px;border-top:1px solid var(--line);font-size:13px;color:var(--secondary);background:var(--s2)}
   @media (max-width:820px){
     .toc{grid-template-columns:repeat(2,minmax(0,1fr))}
     .cards{grid-template-columns:1fr}

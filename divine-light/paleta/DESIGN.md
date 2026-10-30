@@ -14,6 +14,13 @@ colors:
   rose-ink: "#775B57"
   taupe: "#AB9D8B"
   page: "#F6F1EB"
+  surface-0: "#FFFFFF"
+  surface-1: "#FFFCF6"
+  surface-2: "#F9F4EE"
+  surface-3: "#F6F1EB"
+  surface-4: "#F2EDE5"
+  surface-5: "#E6DED5"
+  surface-6: "#DED5CA"
   neutral: "#FFFCF6"
   sand: "#E6DED5"
   sand-soft: "#F2EDE5"
@@ -189,6 +196,49 @@ components:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.rose-ink}"
     typography: "{typography.body}"
+  section-on-white:
+    backgroundColor: "{colors.surface-0}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  section-on-cream:
+    backgroundColor: "{colors.surface-1}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  section-on-paper:
+    backgroundColor: "{colors.surface-3}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  section-on-sand:
+    backgroundColor: "{colors.surface-5}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  section-on-cream-sand:
+    backgroundColor: "{colors.surface-2}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  card-on-sand-soft:
+    backgroundColor: "{colors.surface-4}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.lg}"
+    padding: 32px
+  card-on-sand:
+    backgroundColor: "{colors.surface-0}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.lg}"
+    padding: 32px
+  card-on-white:
+    backgroundColor: "{colors.surface-5}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.lg}"
+    padding: 32px
+  band-sand-deep:
+    backgroundColor: "{colors.surface-6}"
+    textColor: "{colors.primary}"
+    typography: "{typography.label}"
+    padding: 10px 18px
 ---
 
 ## Overview
@@ -250,6 +300,30 @@ aprobación: si la propuesta cambia, estos colores no.
 - **Fuera del sistema:** el dorado, el violeta de la barra de cookies de la guía (`#5A5090`, componente de
   terceros) y cualquier otro rosa que no sea `#DAA79F` y su familia.
 
+**Superficies — la escala de fondo.** El fondo no es un solo beige: hay una rampa de siete pasos que va del
+blanco puro a la arena profunda, y cada paso se usa con un papel concreto. Los pasos intermedios están
+calculados mezclando blanco con la arena de la guía (`#E6DED5`), no elegidos a ojo.
+
+| token | valor | papel | marino encima |
+|---|---|---|---|
+| `surface-0` | `#FFFFFF` | tarjetas, superficies elevadas, secciones de respiración | 11.63:1 |
+| `surface-1` | `#FFFCF6` | crema de la guía: sección clara por defecto | 11.36:1 |
+| `surface-2` | `#F9F4EE` | crema-arena: sección alterna suave | 10.64:1 |
+| `surface-3` | `#F6F1EB` | papel de página (el `body` de la guía) | 10.36:1 |
+| `surface-4` | `#F2EDE5` | arena suave: tarjetas informativas, chips | 9.98:1 |
+| `surface-5` | `#E6DED5` | arena de la guía: bandas y bloques destacados | 8.74:1 |
+| `surface-6` | `#DED5CA` | arena profunda: pie, avisos, cierre | 7.96:1 |
+
+**Cómo se alternan.** Blanco y crema se mezclan sin miedo: una página puede empezar en blanco, seguir en crema y
+cerrar en arena. La regla es la del salto de luz: entre dos capas con **menos de 1.15:1** de diferencia (papel
+`#F6F1EB` contra crema `#FFFCF6` = 1.10:1; papel contra blanco = 1.12:1) hace falta un **filete de 1px** o la
+división no se ve; a partir de **1.30:1** (crema contra arena) la capa se lee sola y el filete es opcional
+(decorativo, no estructural).
+
+**No** se apilan tres claros seguidos sin filete, ni se pone una tarjeta blanca sobre crema sin borde. Sí se
+puede: tarjeta blanca sobre arena, tarjeta arena sobre blanco, sección crema entre dos blancas, banda de arena
+profunda al cierre.
+
 **Accesibilidad — lo que manda.** Todo par texto/fondo está medido:
 
 | Combinación | Ratio | Uso |
@@ -303,7 +377,8 @@ Dos familias con reparto estricto.
 ## Elevation & Depth
 
 La profundidad es **cálida y mínima**. Casi todo se separa con borde de 1px (`#CEC4B7`) o con un cambio de
-capa: papel de página → crema → arena. La sombra solo aparece cuando algo flota de verdad.
+capa de la rampa de superficies (blanco → crema → papel → arena). La sombra solo aparece cuando algo flota de
+verdad.
 
 - Tarjetas en reposo: `0 10px 30px rgba(54,55,75,0.06)`.
 - Tarjetas elevadas / hover: `0 18px 44px rgba(54,55,75,0.10)`.
@@ -350,7 +425,9 @@ capa: papel de página → crema → arena. La sombra solo aparece cuando algo f
 
 **Do**
 
-- Fija el fondo de página en `#F6F1EB`, sube las secciones a crema `#FFFCF6` y las tarjetas a blanco.
+- Fija el fondo de página en `#F6F1EB` y alterna secciones en blanco `#FFFFFF`, crema `#FFFCF6` y arena
+  `#E6DED5`; el blanco no es solo de tarjeta, también es una capa de sección válida.
+- Baja de capa con la rampa de superficies (0 → 6) en vez de inventar un beige nuevo.
 - Usa el calipso como relleno y baja a `#43616A` cuando necesites calipso en texto.
 - Usa el rosa `#DAA79F` como relleno cálido con texto marino, o `#775B57` cuando el rosa es texto.
 - Escribe los titulares en serif peso 400, con la segunda voz en cursiva.

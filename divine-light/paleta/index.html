@@ -12,6 +12,7 @@
     --primary:#36374B; --secondary:#6A5C49; --accent:#70A3B2; --accent-soft:#B9D2D8;
     --accent-ink:#43616A; --accent-deep:#4E727C; --taupe:#AB9D8B; --page:#F6F1EB;
     --rose:#DAA79F; --rose-soft:#E6C5C0; --rose-ink:#775B57;
+    --s0:#FFFFFF; --s1:#FFFCF6; --s2:#F9F4EE; --s3:#F6F1EB; --s4:#F2EDE5; --s5:#E6DED5; --s6:#DED5CA;
     --neutral:#FFFCF6; --sand:#E6DED5; --sand-soft:#F2EDE5; --line:#CEC4B7;
     --charcoal:#353535; --white:#FFFFFF;
     --serif:"Piazzolla",Georgia,serif; --sans:"DM Sans",-apple-system,Segoe UI,Roboto,sans-serif;
@@ -65,6 +66,19 @@
          background:var(--sand-soft);color:var(--secondary)}
   .ratio.ok{background:#E8F3EC;color:#1F5C3A}
   .ratio.fill{background:var(--sand);color:var(--secondary)}
+
+  /* fondos */
+  .ramp{display:grid;grid-template-columns:repeat(7,1fr);border-radius:14px;overflow:hidden;
+        border:1px solid var(--line);margin:8px 0 26px}
+  .ramp div{height:96px;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 10px;
+            font-size:10.5px;letter-spacing:.06em;color:var(--secondary)}
+  .ramp b{font-size:11px;color:var(--primary);letter-spacing:.02em}
+  .demos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
+  .demo{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .demo .pane{padding:20px 18px;min-height:150px;display:flex;flex-direction:column;gap:10px}
+  .demo .mini{border-radius:12px;padding:14px;font-size:12px;line-height:1.45}
+  .demo .cap{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);
+             padding:9px 14px;border-top:1px solid var(--line);background:var(--s0)}
 
   /* tipografía */
   .spec{border-top:1px solid var(--line);padding:22px 0;display:grid;grid-template-columns:150px 1fr;gap:24px}
@@ -150,12 +164,13 @@
     <div class="toc">
       <a href="#esencia"><span>01</span>Esencia</a>
       <a href="#paleta"><span>02</span>Paleta</a>
-      <a href="#tipografia"><span>03</span>Tipografía</a>
-      <a href="#forma"><span>04</span>Forma y profundidad</a>
-      <a href="#componentes"><span>05</span>Componentes</a>
-      <a href="#reglas"><span>06</span>Sí / No</a>
-      <a href="#accesibilidad"><span>07</span>Accesibilidad</a>
-      <a href="#pendientes"><span>08</span>Pendientes</a>
+      <a href="#fondos"><span>03</span>Fondos</a>
+      <a href="#tipografia"><span>04</span>Tipografía</a>
+      <a href="#forma"><span>05</span>Forma y profundidad</a>
+      <a href="#componentes"><span>06</span>Componentes</a>
+      <a href="#reglas"><span>07</span>Sí / No</a>
+      <a href="#accesibilidad"><span>08</span>Accesibilidad</a>
+      <a href="#pendientes"><span>09</span>Pendientes</a>
     </div>
   </div>
 </section>
@@ -246,6 +261,62 @@
         <span class="ratio ok">11.98:1 AA</span></div></div>
     </div>
   </section>
+
+<section id="fondos">
+  <div class="wrap">
+    <div class="eyebrow">Fondos</div>
+    <h2>Del blanco a la arena, <em class="voice">siete pasos con papel propio</em></h2>
+    <p>El fondo no es un beige único: es una rampa que empieza en blanco puro y termina en arena profunda. Los
+      pasos intermedios están calculados mezclando blanco con la arena de la guía, no elegidos a ojo.</p>
+
+    <div class="ramp">
+      <div style="background:var(--s0)"><b>0 · blanco</b>#FFFFFF</div>
+      <div style="background:var(--s1)"><b>1 · crema</b>#FFFCF6</div>
+      <div style="background:var(--s2)"><b>2 · crema-arena</b>#F9F4EE</div>
+      <div style="background:var(--s3)"><b>3 · papel</b>#F6F1EB</div>
+      <div style="background:var(--s4)"><b>4 · arena suave</b>#F2EDE5</div>
+      <div style="background:var(--s5)"><b>5 · arena</b>#E6DED5</div>
+      <div style="background:var(--s6)"><b>6 · arena profunda</b>#DED5CA</div>
+    </div>
+
+    <div class="demos">
+      <div class="demo">
+        <div class="pane" style="background:var(--s0)">
+          <div style="font-family:var(--serif);font-size:22px;line-height:1.15">Sección en blanco</div>
+          <div class="mini" style="background:var(--s5)">Tarjeta en arena sobre blanco: la arena se lee sola
+            (1.30:1 de salto). Sin borde.</div>
+          <div class="mini" style="background:var(--s4);border:1px solid var(--line)">Arena suave sobre blanco:
+            necesita filete de 1px.</div>
+        </div>
+        <div class="cap">blanco + tarjetas cálidas</div>
+      </div>
+      <div class="demo">
+        <div class="pane" style="background:var(--s3)">
+          <div style="font-family:var(--serif);font-size:22px;line-height:1.15">Sección en papel</div>
+          <div class="mini" style="background:var(--s0)">Tarjeta blanca sobre papel: sube la luz y se separa con
+            sombra suave.</div>
+          <div class="mini" style="background:var(--s1);border:1px solid var(--line)">Crema sobre papel: 1.10:1,
+            solo con filete.</div>
+        </div>
+        <div class="cap">papel + tarjetas blancas</div>
+      </div>
+      <div class="demo">
+        <div class="pane" style="background:var(--s2)">
+          <div style="font-family:var(--serif);font-size:22px;line-height:1.15">Sección crema-arena</div>
+          <div class="mini" style="background:var(--s6)">Banda de arena profunda para el cierre o un aviso.</div>
+          <div class="mini" style="background:var(--s0);border:1px solid var(--line)">Tarjeta blanca dentro de una
+            sección cálida.</div>
+        </div>
+        <div class="cap">capa intermedia + cierre</div>
+      </div>
+    </div>
+
+    <p style="margin-top:26px;color:var(--secondary);font-size:14px">La regla es el salto de luz: entre dos capas
+      con <strong>menos de 1.15:1</strong> de diferencia hace falta un filete de 1px (papel contra crema = 1.10:1);
+      a partir de <strong>1.30:1</strong> la capa se lee sola y el filete pasa a ser decorativo. Nunca tres claros
+      seguidos sin filete.</p>
+  </div>
+</section>
 
 <section id="tipografia">
   <div class="wrap">
@@ -376,7 +447,7 @@
       <div>
         <h3 style="margin-bottom:12px">Sí</h3>
         <ul class="plain yes">
-          <li>Papel de página cálido, secciones en crema y capas de arena; blanco puro solo en tarjeta.</li>
+          <li>Rampa de fondos: blanco, crema, papel y arena alternados; el blanco también es capa de sección.</li>
           <li>Calipso como relleno y <code>#43616A</code> cuando el calipso es texto.</li>
           <li>Rosa <code>#DAA79F</code> como relleno cálido con texto marino, o <code>#775B57</code> si el rosa es texto.</li>
           <li>Titulares serif peso 400, segunda voz en cursiva.</li>
@@ -443,7 +514,7 @@
 
 <footer>
   <div class="wrap">
-    Divine Light Journey · guía visual v2.1 · 29-oct-2026 · tokens normativos en <code>DESIGN.md</code> ·
+    Divine Light Journey · guía visual v2.2 · 29-oct-2026 · tokens normativos en <code>DESIGN.md</code> ·
     fuente de la paleta: <code>lorieladd.com/40-days</code>, tokens leídos de su CSS, más el rosa
     <code>#DAA79F</code> aportado por Héctor. Independiente de la propuesta de diseño.
   </div>

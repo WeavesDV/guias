@@ -281,6 +281,14 @@ components:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.neutral}"
     typography: "{typography.body}"
+  cta-band-light:
+    backgroundColor: "{colors.dawn}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  cta-band-dark:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.neutral}"
+    typography: "{typography.body}"
 ---
 
 ## Overview
@@ -386,10 +394,17 @@ Azul claro arriba, dorado pálido en el horizonte, crema rosada abajo. El texto 
 (8.84:1 arriba, 10.25:1 abajo). Los únicos fondos oscuros que quedan son **de componente, no de página**: el marco
 del reproductor de vídeo, el velo de una foto y la **variante oscura del pie**.
 
-**El pie tiene dos versiones** (decisión de Héctor, 30-oct). `footer-light` — arena `#E6DED5` con texto marino y
-monograma en dorado tinta — es la **de por defecto**: es la que responde a lo que pidió la clienta. `footer-dark` —
-marino `#36374B` con texto crema y monograma en dorado `#D9B26B` (5.83:1) — se ofrece como alternativa para
-cierres que necesiten contraste duro. Mismo contenido, misma rejilla, mismo monograma: solo cambia la capa.
+**El bloque de cierre tiene dos versiones completas** (decisión de Héctor, 30-oct): la **banda + el pie** van
+siempre en pareja, no sueltos.
+
+- **Pareja clara (por defecto):** `cta-band-light` sobre el cielo de amanecer (`dawn`) + `footer-light` en arena
+  `#E6DED5`. Texto marino, monograma en dorado tinta `#7A5C26` (6.06:1). Es la que responde a lo que pidió la
+  clienta — «una página con más luz».
+- **Pareja oscura (alternativa):** `cta-band-dark` en marino `#36374B` + `footer-dark` en el mismo marino. Texto
+  crema, monograma en dorado `#D9B26B` (5.83:1). Para cierres que necesiten contraste duro.
+
+Mismo contenido, misma rejilla, mismo monograma: solo cambia la capa. La clara es el valor por defecto del
+componente; la oscura se elige con `tone="dark"` en los dos a la vez.
 
 **Accesibilidad — lo que manda.** Todo par texto/fondo está medido:
 

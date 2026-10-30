@@ -273,6 +273,14 @@ components:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.gold-ink}"
     typography: "{typography.body}"
+  footer-light:
+    backgroundColor: "{colors.surface-5}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  footer-dark:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.neutral}"
+    typography: "{typography.body}"
 ---
 
 ## Overview
@@ -376,7 +384,12 @@ linear-gradient(180deg, #CFE4EC 0%, #E7E4D8 38%, #F7E3C4 68%, #FBEFDD 100%)
 
 Azul claro arriba, dorado pálido en el horizonte, crema rosada abajo. El texto va siempre en tinta `#36374B`
 (8.84:1 arriba, 10.25:1 abajo). Los únicos fondos oscuros que quedan son **de componente, no de página**: el marco
-del reproductor de vídeo y el velo de una foto. Nada más.
+del reproductor de vídeo, el velo de una foto y la **variante oscura del pie**.
+
+**El pie tiene dos versiones** (decisión de Héctor, 30-oct). `footer-light` — arena `#E6DED5` con texto marino y
+monograma en dorado tinta — es la **de por defecto**: es la que responde a lo que pidió la clienta. `footer-dark` —
+marino `#36374B` con texto crema y monograma en dorado `#D9B26B` (5.83:1) — se ofrece como alternativa para
+cierres que necesiten contraste duro. Mismo contenido, misma rejilla, mismo monograma: solo cambia la capa.
 
 **Accesibilidad — lo que manda.** Todo par texto/fondo está medido:
 
@@ -501,7 +514,8 @@ verdad.
 - No pongas texto blanco sobre calipso (2.77:1), ni crema o blanco sobre rosa `#DAA79F` (2.05:1), ni calipso
   `#70A3B2` como texto sobre crema (2.71:1).
 - No introduzcas rosas fuera de `#DAA79F`, dorados fuera de `#D9B26B` ni el violeta de la barra de cookies.
-- No vuelvas a poner secciones de página oscuras: ni hero negro, ni footer negro, ni banda marino entera.
+- No vuelvas a poner secciones de página oscuras: ni hero negro, ni banda marino entera. El pie oscuro solo
+  existe como variante explícita (`footer-dark`), nunca por defecto.
 - No introduzcas negro puro: la tinta es `#36374B` y el gris es `#353535`.
 - No mezcles degradados de dos acentos ni degradados fríos.
 - No uses negritas en los titulares serif: el peso 400 es la firma.

@@ -13,6 +13,8 @@
     --accent-ink:#43616A; --accent-deep:#4E727C; --taupe:#AB9D8B; --page:#F6F1EB;
     --rose:#DAA79F; --rose-soft:#E6C5C0; --rose-ink:#775B57;
     --s0:#FFFFFF; --s1:#FFFCF6; --s2:#F9F4EE; --s3:#F6F1EB; --s4:#F2EDE5; --s5:#E6DED5; --s6:#DED5CA;
+    --gold:#D9B26B; --gold-soft:#EFD9B4; --gold-ink:#7A5C26;
+    --sky:#CFE4EC; --glow:#F7E3C4; --dawn:#FBEFDD;
     --neutral:#FFFCF6; --sand:#E6DED5; --sand-soft:#F2EDE5; --line:#CEC4B7;
     --charcoal:#353535; --white:#FFFFFF;
     --serif:"Piazzolla",Georgia,serif; --sans:"DM Sans",-apple-system,Segoe UI,Roboto,sans-serif;
@@ -128,6 +130,8 @@
   .btn.primary:hover{background:var(--charcoal)}
   .btn.accent{background:var(--accent-soft);color:var(--primary)}
   .btn.accent:hover{background:#A9C7CE}
+  .btn.gold{background:var(--gold);color:var(--primary)}
+  .btn.gold:hover{background:var(--gold-soft)}
   .btn.rose{background:var(--rose);color:var(--primary)}
   .btn.rose:hover{background:#D2968C}
   .card.rose{background:var(--rose-soft);border-color:#DDB6B0}
@@ -256,6 +260,18 @@
         <div class="nm">Rosa tinta</div><div class="hx">#775B57</div>
         <div class="role">Rosa cuando es texto sobre fondo claro.</div>
         <span class="ratio ok">6.00:1 AA</span></div></div>
+      <div class="sw"><div class="chip" style="background:#D9B26B"></div><div class="info">
+        <div class="nm">Dorado de luz</div><div class="hx">#D9B26B</div>
+        <div class="role">Filetes, iconos y el extremo cálido del amanecer. Solo relleno.</div>
+        <span class="ratio fill">1.95:1 · solo relleno</span></div></div>
+      <div class="sw"><div class="chip" style="background:#EFD9B4"></div><div class="info">
+        <div class="nm">Dorado pálido</div><div class="hx">#EFD9B4</div>
+        <div class="role">Superficie dorada que lleva texto encima.</div>
+        <span class="ratio ok">8.45:1 AA</span></div></div>
+      <div class="sw"><div class="chip" style="background:#7A5C26"></div><div class="info">
+        <div class="nm">Dorado tinta</div><div class="hx">#7A5C26</div>
+        <div class="role">Dorado cuando es texto sobre fondo claro.</div>
+        <span class="ratio ok">6.06:1 AA</span></div></div>
       <div class="sw"><div class="chip" style="background:#AB9D8B"></div><div class="info">
         <div class="nm">Taupe</div><div class="hx">#AB9D8B</div>
         <div class="role">Estados e interruptores. Solo relleno.</div>
@@ -325,6 +341,24 @@
             sección cálida.</div>
         </div>
         <div class="cap">capa intermedia + cierre</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:44px;font-size:24px">Cielo de amanecer</h3>
+    <p>Donde antes había una sección oscura ahora hay luz: azul claro arriba, dorado en el horizonte y crema abajo.
+      Es el fondo del hero, de las bandas de cierre y del pie. Texto siempre en tinta marino.</p>
+    <div style="border-radius:18px;overflow:hidden;border:1px solid var(--line)">
+      <div style="padding:56px 32px;text-align:center;background:linear-gradient(180deg,#CFE4EC 0%,#E7E4D8 38%,#F7E3C4 68%,#FBEFDD 100%)">
+        <div style="font-family:var(--serif);font-size:clamp(24px,3.4vw,40px);line-height:1.1">Comienza
+          <em class="voice">Reconecta</em></div>
+        <p style="margin:12px auto 0;max-width:44ch;font-size:14px;color:var(--secondary)">Un espacio para
+          reconectarte contigo misma, guiarte paso a paso.</p>
+        <div style="margin-top:20px"><span class="btn gold">Reservar mi lugar · 99 €</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)">
+        <div style="background:var(--sky);padding:10px 14px;font-size:11px">cielo · #CFE4EC</div>
+        <div style="background:var(--glow);padding:10px 14px;font-size:11px">horizonte · #F7E3C4</div>
+        <div style="background:var(--dawn);padding:10px 14px;font-size:11px">amanecer · #FBEFDD</div>
       </div>
     </div>
 
@@ -467,6 +501,7 @@
           <li>Rampa de fondos: blanco, crema, papel y arena alternados; el blanco también es capa de sección.</li>
           <li>Calipso como relleno y <code>#43616A</code> cuando el calipso es texto.</li>
           <li>Rosa <code>#DAA79F</code> como relleno cálido con texto marino, o <code>#775B57</code> si el rosa es texto.</li>
+          <li>Dorado <code>#D9B26B</code> como filete, icono o extremo cálido; <code>#7A5C26</code> si es texto.</li>
           <li>Titulares serif peso 400, segunda voz en cursiva.</li>
           <li>120px entre secciones y 62-68ch de medida.</li>
           <li>Filete de 1px antes que sombra.</li>
@@ -475,9 +510,9 @@
       <div>
         <h3 style="margin-bottom:12px">No</h3>
         <ul class="plain no">
-          <li>Texto blanco sobre calipso o rosa, o calipso como texto pequeño.</li>
+          <li>Texto blanco sobre calipso, rosa o dorado, ni calipso como texto pequeño.</li>
           <li>Negro puro: la tinta es <code>#36374B</code>.</li>
-          <li>Rosas fuera de <code>#DAA79F</code>, dorado o el violeta de la barra de cookies.</li>
+          <li>Secciones de página oscuras: ni hero negro, ni footer negro, ni banda marino entera.</li>
           <li>Degradados de dos acentos o fríos.</li>
           <li>Negritas en titulares serif ni sombras negras.</li>
         </ul>
@@ -504,11 +539,15 @@
         <tr><td>Calipso tinta sobre crema</td><td>6.50:1</td><td>Sí</td><td>Enlaces y antetítulos</td></tr>
         <tr><td>Rosa tinta sobre crema</td><td>6.00:1</td><td>Sí</td><td>Rosa cuando es texto</td></tr>
         <tr><td>Marino sobre rosa</td><td>5.55:1</td><td>Sí</td><td>Botón y tarjeta rosa</td></tr>
+        <tr><td>Marino sobre dorado</td><td>5.83:1</td><td>Sí</td><td>Botón dorado</td></tr>
+        <tr><td>Dorado tinta sobre crema</td><td>6.06:1</td><td>Sí</td><td>Dorado cuando es texto</td></tr>
+        <tr><td>Marino sobre cielo</td><td>8.84:1</td><td>Sí</td><td>Texto sobre el degradado de amanecer</td></tr>
         <tr><td>Crema sobre calipso profundo</td><td>5.10:1</td><td>Sí</td><td>Bandas oscuras y hover</td></tr>
         <tr><td>Calipso sobre marino</td><td>4.19:1</td><td>Solo ≥24px</td><td>Texto grande sobre sección oscura</td></tr>
         <tr><td>Blanco sobre calipso</td><td>2.77:1</td><td><strong>No</strong></td><td>Prohibido</td></tr>
         <tr><td>Calipso sobre crema</td><td>2.71:1</td><td><strong>No</strong></td><td>Solo relleno</td></tr>
         <tr><td>Blanco o crema sobre rosa</td><td>2.05:1</td><td><strong>No</strong></td><td>Prohibido</td></tr>
+        <tr><td>Dorado sobre crema</td><td>1.95:1</td><td><strong>No</strong></td><td>Solo relleno</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -531,7 +570,7 @@
 
 <footer>
   <div class="wrap">
-    Divine Light Journey · guía visual v2.2 · 29-oct-2026 · tokens normativos en <code>DESIGN.md</code> ·
+    Divine Light Journey · guía visual v2.3 · 30-oct-2026 · tokens normativos en <code>DESIGN.md</code> ·
     fuente de la paleta: <code>lorieladd.com/40-days</code>, tokens leídos de su CSS, más el rosa
     <code>#DAA79F</code> aportado por Héctor. Independiente de la propuesta de diseño.
   </div>

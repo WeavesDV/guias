@@ -12,6 +12,12 @@ colors:
   rose: "#DAA79F"
   rose-soft: "#E6C5C0"
   rose-ink: "#775B57"
+  gold: "#D9B26B"
+  gold-soft: "#EFD9B4"
+  gold-ink: "#7A5C26"
+  sky: "#CFE4EC"
+  glow: "#F7E3C4"
+  dawn: "#FBEFDD"
   taupe: "#AB9D8B"
   page: "#F6F1EB"
   surface-0: "#FFFFFF"
@@ -239,6 +245,34 @@ components:
     textColor: "{colors.primary}"
     typography: "{typography.label}"
     padding: 10px 18px
+  hero-dawn:
+    backgroundColor: "{colors.dawn}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  section-glow:
+    backgroundColor: "{colors.glow}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  section-sky:
+    backgroundColor: "{colors.sky}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+  button-gold:
+    backgroundColor: "{colors.gold}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.pill}"
+    padding: 16px 34px
+  card-gold:
+    backgroundColor: "{colors.gold-soft}"
+    textColor: "{colors.primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.lg}"
+    padding: 32px
+  link-gold:
+    backgroundColor: "{colors.neutral}"
+    textColor: "{colors.gold-ink}"
+    typography: "{typography.body}"
 ---
 
 ## Overview
@@ -284,6 +318,15 @@ aprobación: si la propuesta cambia, estos colores no.
 - **Rose soft `#E6C5C0`:** el rosa aclarado para bloques grandes que llevan texto marino (7.26:1).
 - **Rose ink `#775B57`:** el rosa cuando es texto sobre fondo claro. 6.00:1 sobre crema, 5.47:1 sobre el papel de
   página y 4.61:1 sobre arena.
+- **Gold `#D9B26B` (dorado de luz):** el dorado que pidió Zuzel el 30-oct — «un tono dorado que tenga que ver
+  con la luz». Filetes, iconos, subrayados y el extremo cálido del degradado de amanecer. **Solo relleno**
+  (1.95:1 sobre crema); con texto marino encima da 5.83:1.
+- **Gold soft `#EFD9B4`:** el dorado pálido para superficies grandes que llevan texto (marino 8.45:1).
+- **Gold ink `#7A5C26`:** el dorado cuando es texto sobre fondo claro. 6.06:1 sobre crema, 5.52:1 sobre papel y
+  4.66:1 sobre arena.
+- **Sky `#CFE4EC`, Glow `#F7E3C4`, Dawn `#FBEFDD`:** los tres stops del cielo de amanecer. `sky` arriba (azul
+  claro), `glow` en el horizonte (dorado pálido) y `dawn` abajo (crema rosada). Texto marino en los tres:
+  8.84:1, 9.27:1 y 10.25:1.
 - **Taupe `#AB9D8B`:** estados, interruptores y detalles apagados, medido en la guía. **Solo relleno**: 2.59:1
   sobre crema; con texto lleva carbón `#353535` (4.63:1), no marino.
 - **Page `#F6F1EB`:** fondo de página — es el `background-color` del body en la guía. El crema puro **no** es el
@@ -297,8 +340,8 @@ aprobación: si la propuesta cambia, estos colores no.
   el papel de página.
 - **Charcoal `#353535`:** color del texto corrido en la guía y hover del botón primario. Es el único gris neutro
   del sistema; no introduce familia nueva.
-- **Fuera del sistema:** el dorado, el violeta de la barra de cookies de la guía (`#5A5090`, componente de
-  terceros) y cualquier otro rosa que no sea `#DAA79F` y su familia.
+- **Fuera del sistema:** el violeta de la barra de cookies de la guía (`#5A5090`, componente de terceros),
+  cualquier rosa que no sea `#DAA79F` y cualquier dorado que no sea `#D9B26B`.
 
 **Superficies — la escala de fondo.** El fondo no es un solo beige: hay una rampa de siete pasos que va del
 blanco puro a la arena profunda, y cada paso se usa con un papel concreto. Los pasos intermedios están
@@ -324,6 +367,17 @@ división no se ve; a partir de **1.30:1** (crema contra arena) la capa se lee s
 puede: tarjeta blanca sobre arena, tarjeta arena sobre blanco, sección crema entre dos blancas, banda de arena
 profunda al cierre.
 
+**Luz, no oscuridad.** El proyecto trata de luz, y el diseño tiene que parecerlo: **no hay secciones de página
+oscuras**. Donde antes había un hero o un cierre en carbón o marino, ahora hay un **cielo de amanecer**:
+
+```
+linear-gradient(180deg, #CFE4EC 0%, #E7E4D8 38%, #F7E3C4 68%, #FBEFDD 100%)
+```
+
+Azul claro arriba, dorado pálido en el horizonte, crema rosada abajo. El texto va siempre en tinta `#36374B`
+(8.84:1 arriba, 10.25:1 abajo). Los únicos fondos oscuros que quedan son **de componente, no de página**: el marco
+del reproductor de vídeo y el velo de una foto. Nada más.
+
 **Accesibilidad — lo que manda.** Todo par texto/fondo está medido:
 
 | Combinación | Ratio | Uso |
@@ -344,6 +398,11 @@ profunda al cierre.
 | `#70A3B2` sobre `#36374B` | 4.19:1 | calipso como texto grande (≥24px) sobre marino |
 | `#70A3B2` sobre `#FFFCF6` | 2.71:1 | **solo relleno** — nunca texto |
 | `#FFFCF6` sobre `#DAA79F` | 2.05:1 | **prohibido**: ni crema ni blanco sobre rosa |
+| `#36374B` sobre `#D9B26B` | 5.83:1 | texto del botón dorado |
+| `#7A5C26` sobre `#FFFCF6` | 6.06:1 | dorado cuando es texto |
+| `#36374B` sobre `#CFE4EC` | 8.84:1 | texto sobre el cielo (arriba) |
+| `#36374B` sobre `#F7E3C4` | 9.27:1 | texto sobre el horizonte |
+| `#D9B26B` sobre `#FFFCF6` | 1.95:1 | **solo relleno** |
 | `#AB9D8B` sobre `#FFFCF6` | 2.59:1 | **solo relleno** |
 
 Reglas duras: **nunca texto blanco o crema sobre calipso ni sobre rosa** (2.77:1 y 2.05:1), ni calipso `#70A3B2`
@@ -428,6 +487,8 @@ verdad.
 - Fija el fondo de página en `#F6F1EB` y alterna secciones en blanco `#FFFFFF`, crema `#FFFCF6` y arena
   `#E6DED5`; el blanco no es solo de tarjeta, también es una capa de sección válida.
 - Baja de capa con la rampa de superficies (0 → 6) en vez de inventar un beige nuevo.
+- Sustituye cualquier banda oscura por el degradado de amanecer (`sky → glow → dawn`).
+- Usa el dorado `#D9B26B` como filete, icono o extremo cálido del degradado; `#7A5C26` si el dorado es texto.
 - Usa el calipso como relleno y baja a `#43616A` cuando necesites calipso en texto.
 - Usa el rosa `#DAA79F` como relleno cálido con texto marino, o `#775B57` cuando el rosa es texto.
 - Escribe los titulares en serif peso 400, con la segunda voz en cursiva.
@@ -439,7 +500,8 @@ verdad.
 
 - No pongas texto blanco sobre calipso (2.77:1), ni crema o blanco sobre rosa `#DAA79F` (2.05:1), ni calipso
   `#70A3B2` como texto sobre crema (2.71:1).
-- No introduzcas rosas fuera de `#DAA79F`, ni el dorado ni el violeta de la barra de cookies.
+- No introduzcas rosas fuera de `#DAA79F`, dorados fuera de `#D9B26B` ni el violeta de la barra de cookies.
+- No vuelvas a poner secciones de página oscuras: ni hero negro, ni footer negro, ni banda marino entera.
 - No introduzcas negro puro: la tinta es `#36374B` y el gris es `#353535`.
 - No mezcles degradados de dos acentos ni degradados fríos.
 - No uses negritas en los titulares serif: el peso 400 es la firma.
